@@ -1,5 +1,3 @@
-
-//Person类
 public class Person {
 
     private String name;
