@@ -19,7 +19,7 @@ public class MulticastServer {
             //客户端和服务端的组播IP地址必须相同
             InetAddress address = InetAddress.getByName("224.1.1.1");
             //UDP数据包
-            DatagramPacket packet = new DatagramPacket(msg.getBytes(),msg.length(),address,8080);
+            DatagramPacket packet = new DatagramPacket(msg.getBytes(),msg.getBytes().length,address,8080);
 
             //3.发送组播消息
             socket.send(packet);

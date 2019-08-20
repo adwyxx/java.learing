@@ -28,7 +28,7 @@ public class MulticastClient {
             socket.receive(packet);
 
             //5.读取数据
-            String msg = new String(packet.getData(),0,packet.getLength());
+            String msg = new String(packet.getData(),0,packet.getData().length);
             System.out.println("接收到组播数据："+msg);
         } catch (IOException e) {
             e.printStackTrace();
