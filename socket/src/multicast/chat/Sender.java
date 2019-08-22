@@ -33,16 +33,16 @@ public class Sender implements  Runnable{
         DatagramPacket packet;
         while (true){
             try {
-                //从消息队列中获取消息，如果没有获取到，则线程阻塞在这里
+                 //从消息队列中获取消息，如果没有获取到，则线程阻塞在这里
                 String msg = this.massageQueue.take();
                 byte[] bytes = msg.getBytes();
                 packet = new DatagramPacket(bytes,bytes.length,this.group,this.port);
                 this.socket.send(packet);
-                System.out.println("发送组播消息："+msg);
+                System.out.println("发送消息："+msg);
 
                 if(this.massageQueue.isEmpty())
                 {
-                    System.out.println("请输入消息：");
+                    System.out.println("请输入：");
                 }
             } catch (InterruptedException e) {
                 e.printStackTrace();
