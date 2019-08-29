@@ -1,3 +1,5 @@
+package Synchronized;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.concurrent.TimeUnit;
@@ -37,7 +39,7 @@ public class SynchronizeDemo {
             new Thread(()->{new SynchronizeTest().syncThisMethod();},"Sync"+String.valueOf(i)).start();
         }
 
-        //6.synchronize(SynchronizeTest.class)相当于静态方法加synchronized修饰，所有对象的实例竞争同一个锁
+        //6.synchronize(Synchronized.SynchronizeTest.class)相当于静态方法加synchronized修饰，所有对象的实例竞争同一个锁
         for(int i=1;i<=10;i++){
             new Thread(()->{new SynchronizeTest().syncClassMethod();},"Sync"+String.valueOf(i)).start();
         }
@@ -94,7 +96,7 @@ class SynchronizeTest{
     public void syncClassMethod(){
         System.out.println(LocalDateTime.now().format(formatter) + " : " + Thread.currentThread().getName()+",syncClassMethod，等待获取锁...");
         synchronized (SynchronizeTest.class) {
-            System.out.println(LocalDateTime.now().format(formatter) + " : " + Thread.currentThread().getName()+",synchronized(SynchronizeTest.class)");
+            System.out.println(LocalDateTime.now().format(formatter) + " : " + Thread.currentThread().getName()+",synchronized(Synchronized.SynchronizeTest.class)");
             try {
                 TimeUnit.SECONDS.sleep(3);
             } catch (InterruptedException e) {
@@ -114,7 +116,7 @@ class SynchronizeTest{
             }
         }
     }
-    //synchronized (staticLock) 相当于static synchronized方法或synchronized(SynchronizeTest.class)
+    //synchronized (staticLock) 相当于static synchronized方法或synchronized(Synchronized.SynchronizeTest.class)
     public void syncStaticObjectMethod(){
         System.out.println(LocalDateTime.now().format(formatter) + " : " + Thread.currentThread().getName()+",syncStaticObjectMethod，等待获取锁...");
         synchronized (staticLock) {
