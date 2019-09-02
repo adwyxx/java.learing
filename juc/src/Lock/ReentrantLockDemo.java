@@ -2,7 +2,11 @@ package Lock;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
-
+/**
+* 可重入锁（递归锁）
+* 1.默认为非公平锁
+* 2.
+*/
 public class ReentrantLockDemo {
     //需求：假设有100张票，5个售票窗口售票，售完为止
     public static void main(String[] args) {
