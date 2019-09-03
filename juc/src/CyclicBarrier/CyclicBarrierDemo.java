@@ -1,9 +1,11 @@
+package CyclicBarrier;
+
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @Description: CyclicBarrier（可重用屏障/栅栏），需要等待一组线程全部到达一个指定的点后才能一起执行，就如果开会，需要等人都到齐才开始一样。
+ * @Description: CyclicBarrier.CyclicBarrierTest（可重用屏障/栅栏），需要等待一组线程全部到达一个指定的点后才能一起执行，就如果开会，需要等人都到齐才开始一样。
  * @Author: Leo.Wang
  * @Email: adwyxx@qq.com
  * @Date: 2019-09-02 15:46
@@ -23,7 +25,7 @@ public class CyclicBarrierDemo {
             new Thread(()->{
                 System.out.println(Thread.currentThread().getName()+"--等待其他线程...");
                 try {
-                    //2. CyclicBarrier.await()使线程阻塞
+                    //2. CyclicBarrier.CyclicBarrierTest.await()使线程阻塞
                     cyclicBarrier.await();
                     System.out.println(Thread.currentThread().getName()+"--开始执行");
                     //模拟线程处理业务耗时
