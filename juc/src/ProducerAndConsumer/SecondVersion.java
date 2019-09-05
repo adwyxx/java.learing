@@ -7,12 +7,12 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * @Description: 使用Lock实现生产者-消费者模式
+ * @Description: 使用ReentrantLcok,Condition的await()、signal()/signalAll()来实现
  * @Author: Leo Wang
  * @Email: adwyxx@qq.com
- * @Date: $2019-09-04 20:59
+ * @Date: $2019-09-05 21:10
  **/
-public class DemoForLock {
+public class SecondVersion {
     public static void main(String[] args) {
         final Worker worker = new Worker(3);
         //1.生产者线程
