@@ -19,7 +19,7 @@ public class ParkAndUnpark {
         //创建20消费者线程
         MassageConsumer consumer = new MassageConsumer(messageQueue,thread,parkedCosumers);
         for (int i = 1; i <= 20; i++) {
-            new Thread(consumer,"Consumer"+i).start();
+            new Thread(consumer,"Synchronized.Consumer"+i).start();
         }
     }
 }
