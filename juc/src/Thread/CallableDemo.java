@@ -6,8 +6,8 @@ import java.util.concurrent.FutureTask;
 public class CallableDemo {
     public  static  void  main(String[] args)
     {
-        ThreadDemo th1 = new ThreadDemo(10);
-        ThreadDemo th2 = new ThreadDemo(100);
+        CallableTask th1 = new CallableTask(10);
+        CallableTask th2 = new CallableTask(100);
         //1.执行 Callable 方式，需要 FutureTask 实现类的支持，用于接收运算结果。
         FutureTask<Integer> result1 = new FutureTask<>(th1);
         FutureTask<Integer> result2 = new FutureTask<>(th2);
@@ -36,11 +36,11 @@ public class CallableDemo {
 }
 
 //实现Callable<V>泛型接口
-class ThreadDemo implements Callable<Integer>{
+class CallableTask implements Callable<Integer>{
 
     private int sum;
     private int limit;
-    public ThreadDemo(int limit)
+    public CallableTask(int limit)
     {
         this.limit=limit;
     }
