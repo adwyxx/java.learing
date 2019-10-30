@@ -15,6 +15,7 @@ import java.lang.annotation.*;
 @Target(ElementType.TYPE)
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
+@Inherited //允许继承，即：子类可以继承父类的注解
 public @interface MyAnnotation {
     //注解参数 value，默认值: ""  。如果只有一个参数成员,最好把参数名称设为"value",后加小括号。
     String value() default "";

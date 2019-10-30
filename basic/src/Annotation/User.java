@@ -9,7 +9,7 @@ import java.lang.annotation.*;
  * 第二：参数成员只能用基本类型byte,short,char,int,long,float,double,boolean八种基本数据类型和 String,Enum,Class,annotations等数据类型，以及这一些类型的数组。
  * 第三：如果只有一个参数成员,最好把参数名称设为"value",后加小括号。
  */
-@Target(ElementType.FIELD)
+@Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface User {
